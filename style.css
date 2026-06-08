@@ -45,3 +45,19 @@ body { background-color: #000; color: #fff; margin: 0; }
     width: 100%; height: 100%; background: rgba(0,0,0,0.9);
 }
 .modal img { width: 90%; margin: auto; display: block; margin-top: 10%; }
+body { background: #000; color: #fff; margin: 0; font-family: sans-serif; text-align: center; }
+
+#intro-screen { position: fixed; top: 0; width: 100%; height: 100vh; background: #000; z-index: 999; }
+#intro-screen video { width: 100%; height: 100%; object-fit: cover; }
+
+.card { 
+    background: #1a1a1a; border-radius: 20px; padding: 10px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); 
+    border: 1px solid #ffd700;
+}
+
+.swiper { width: 85%; margin-top: 50px; }
+.swiper-slide img, .swiper-slide video { width: 100%; border-radius: 15px; }
+
+.modal { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
+.modal img { width: 90%; margin-top: 20%; }
