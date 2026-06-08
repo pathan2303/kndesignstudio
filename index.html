@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css">
     <title>KN Studio | Interior Design</title>
 </head>
 <body>
 
-    <!-- Intro Video Layer -->
-    <video id="bg-video" autoplay muted playsinline>
-        <source src="assets/intro.mp4" type="video/mp4">
-    </video>
-
-    <!-- Overlay & Button -->
-    <div id="overlay">
-        <img src="assets/logo.png" alt="KN Studio Logo" class="logo">
-        <button id="explore-btn" class="glass-btn">EXPLORE WORK</button>
+    <div id="intro-screen">
+        <video src="assets/intro.mp4" autoplay muted playsinline></video>
     </div>
 
-    <!-- Main Portfolio Section (Hidden initially) -->
-    <section id="portfolio" style="display:none;">
-        <h1>Our Projects</h1>
-        <!-- Add your image/video grid here -->
-    </section>
+    <div id="main-content">
+        <header>
+            <h1>KN Studio</h1>
+            <p>Established 4.5 Years Ago</p>
+        </header>
 
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide card" onclick="openModal('assets/project1.jpg')">
+                    <img src="assets/project1.jpg">
+                </div>
+                <div class="swiper-slide card">
+                    <video src="assets/video1.mp4" controls></video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal" onclick="this.style.display='none'">
+        <img id="modal-content">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-
