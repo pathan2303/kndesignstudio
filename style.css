@@ -1,63 +1,81 @@
-body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: sans-serif; }
-
-#bg-video {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    object-fit: cover; z-index: -1;
+/* General Reset & Background */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    background: #050505; 
+    font-family: 'Poppins', sans-serif; 
+    overflow-x: hidden;
 }
 
-#overlay {
-    height: 100vh; display: flex; flex-direction: column;
-    justify-content: center; align-items: center;
+/* Premium Header */
+header { 
+    padding: 40px 20px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px;
 }
 
-.logo { width: 200px; margin-bottom: 20px; }
-
-.glass-btn {
-    padding: 15px 40px; font-size: 1.2rem; cursor: pointer;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white; border-radius: 50px;
-    opacity: 0; transition: opacity 1s ease-in-out;
+.logo { 
+    width: 180px; 
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
+    transition: transform 0.3s ease;
 }
-/* Black background for portfolio */
-body { background-color: #000; color: #fff; margin: 0; }
 
-.swiper { width: 100%; padding: 20px; }
+.tagline {
+    color: #ffd700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    opacity: 0.8;
+}
 
-/* The "Golden Shadow" Card Style */
+/* 3D Swiper Styles */
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
 .swiper-slide {
+    width: 260px;
+    height: 380px;
     background: #111;
-    border-radius: 20px;
-    padding: 10px;
-    /* Golden Shadow Effect */
-    box-shadow: 0 8px 32px 0 rgba(255, 215, 0, 0.2), 0 0 10px rgba(255, 215, 0, 0.1);
+    border-radius: 25px;
     border: 1px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px rgba(255, 215, 0, 0.15);
+    overflow: hidden;
+    position: relative;
 }
 
+/* Card Visuals */
 .swiper-slide img, .swiper-slide video {
-    width: 100%; border-radius: 15px; display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-/* Lightbox Modal (To show image when clicked) */
+.swiper-slide:hover img {
+    transform: scale(1.1);
+}
+
+/* Lightbox Modal */
 .modal {
-    display: none; position: fixed; z-index: 1000; top: 0; left: 0;
-    width: 100%; height: 100%; background: rgba(0,0,0,0.9);
-}
-.modal img { width: 90%; margin: auto; display: block; margin-top: 10%; }
-body { background: #000; color: #fff; margin: 0; font-family: sans-serif; text-align: center; }
-
-#intro-screen { position: fixed; top: 0; width: 100%; height: 100vh; background: #000; z-index: 999; }
-#intro-screen video { width: 100%; height: 100%; object-fit: cover; }
-
-.card { 
-    background: #1a1a1a; border-radius: 20px; padding: 10px;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); 
-    border: 1px solid #ffd700;
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.swiper { width: 85%; margin-top: 50px; }
-.swiper-slide img, .swiper-slide video { width: 100%; border-radius: 15px; }
-
-.modal { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
-.modal img { width: 90%; margin-top: 20%; }
+.modal img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.2);
+}
