@@ -20,4 +20,28 @@ body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family:
     color: white; border-radius: 50px;
     opacity: 0; transition: opacity 1s ease-in-out;
 }
+/* Black background for portfolio */
+body { background-color: #000; color: #fff; margin: 0; }
 
+.swiper { width: 100%; padding: 20px; }
+
+/* The "Golden Shadow" Card Style */
+.swiper-slide {
+    background: #111;
+    border-radius: 20px;
+    padding: 10px;
+    /* Golden Shadow Effect */
+    box-shadow: 0 8px 32px 0 rgba(255, 215, 0, 0.2), 0 0 10px rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.swiper-slide img, .swiper-slide video {
+    width: 100%; border-radius: 15px; display: block;
+}
+
+/* Lightbox Modal (To show image when clicked) */
+.modal {
+    display: none; position: fixed; z-index: 1000; top: 0; left: 0;
+    width: 100%; height: 100%; background: rgba(0,0,0,0.9);
+}
+.modal img { width: 90%; margin: auto; display: block; margin-top: 10%; }
