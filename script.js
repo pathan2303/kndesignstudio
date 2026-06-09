@@ -1,6 +1,4 @@
 const btn = document.getElementById("explore-btn");
-
-// 3 second logic
 setTimeout(() => { btn.style.opacity = "1"; }, 3000);
 
 btn.addEventListener("click", () => {
@@ -8,6 +6,11 @@ btn.addEventListener("click", () => {
     document.getElementById("portfolio").style.display = "block";
 });
 
-// Swiper Init
-new Swiper(".imgSwiper", { effect: "coverflow", grabCursor: true, centeredSlides: true, slidesPerView: "auto", loop: true, coverflowEffect: { rotate: 40, depth: 100 } });
-new Swiper(".vidSwiper", { effect: "coverflow", grabCursor: true, centeredSlides: true, slidesPerView: "auto", loop: true, coverflowEffect: { rotate: 40, depth: 100 } });
+function openModal(src) {
+    document.getElementById("modalImg").src = src;
+    document.getElementById("modal").style.display = "flex";
+}
+
+// Sliders (Automatic & Professional)
+new Swiper(".imgSwiper", { effect: "coverflow", grabCursor: true, centeredSlides: true, slidesPerView: "auto", loop: true, autoplay: { delay: 2000 }, coverflowEffect: { rotate: 40, depth: 100 } });
+new Swiper(".vidSwiper", { effect: "coverflow", grabCursor: true, centeredSlides: true, slidesPerView: "auto", loop: true, autoplay: { delay: 3000 }, coverflowEffect: { rotate: 40, depth: 100 } });
