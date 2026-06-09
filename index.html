@@ -3,40 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KN DESIGN STUDIO</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css">
+    <title>KN STUDIO</title>
 </head>
 <body>
 
+    <!-- INTRO LANDING PAGE -->
     <div id="intro-screen">
-        <video id="intro-video" src="assets/intro.mp4" autoplay muted playsinline></video>
-        <button id="exploreBtn" class="explore-btn" onclick="showContent()">EXPLORE STUDIO</button>
+        <video id="bg-video" autoplay muted playsinline>
+            <source src="assets/intro.mp4" type="video/mp4">
+        </video>
+        <div id="overlay">
+            <button id="explore-btn" class="glass-btn">EXPLORE STUDIO</button>
+        </div>
     </div>
 
-    <div id="mainContent">
-        <div class="logo-container"><img src="assets/logo.png" class="logo"></div>
+    <!-- MAIN PORTFOLIO PAGE -->
+    <div id="portfolio" style="display:none;">
+        <img src="assets/logo.png" class="logo">
         
-        <section>
+        <section class="about">
             <h2>About KN Design Studio</h2>
-            <p class="about-text">Established in early 2022, KN Design Studio has spent the last 4.5 years curating elegance. We don't just design; we architect lifestyles by blending bold aesthetics with functional precision, turning empty spaces into masterpieces.</p>
+            <p>Established in Jan 2022, KN Design Studio has been redefining luxury for 4.5 years. We blend precision, aesthetics, and functionality to curate timeless interior spaces that reflect your lifestyle.</p>
         </section>
 
         <h2>Interior Gallery</h2>
-        <div class="swiper imgSwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="assets/project1.jpg"></div>
-            </div>
-        </div>
+        <div class="swiper imgSwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="assets/project1.jpg"></div></div></div>
 
         <h2>Video Walkthroughs</h2>
-        <div class="swiper vidSwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><video src="assets/video1.mp4" muted loop autoplay playsinline></video></div>
-            </div>
-        </div>
+        <div class="swiper vidSwiper"><div class="swiper-wrapper"><div class="swiper-slide"><video src="assets/video1.mp4" muted loop autoplay playsinline></video></div></div></div>
 
-        <a href="https://wa.me/918208591573" class="whatsapp-link">CONTACT US ON WHATSAPP</a>
+        <a href="https://wa.me/918208591573" class="whatsapp-btn">CONTACT US ON WHATSAPP</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
