@@ -1,21 +1,25 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #000; color: #fff; font-family: sans-serif; overflow-x: hidden; }
+body { background: #000; color: #fff; font-family: sans-serif; }
 
-/* Intro */
-#intro-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; }
+#intro-screen { 
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; 
+    z-index: 9999; display: flex; justify-content: center; align-items: center; 
+}
 #intro-video { width: 100%; height: 100%; object-fit: cover; }
-.explore-btn { position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%); padding: 15px 40px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid #ffd700; color: #ffd700; border-radius: 50px; opacity: 0; transition: opacity 1s; cursor: pointer; }
 
-/* Main UI */
-.main-content { display: none; padding-bottom: 50px; }
+.explore-btn {
+    position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%);
+    padding: 15px 40px; background: rgba(255,255,255,0.1); 
+    backdrop-filter: blur(10px); border: 1px solid #ffd700; 
+    color: #ffd700; border-radius: 50px; opacity: 0; 
+    transition: opacity 1s; cursor: pointer; z-index: 10000;
+}
+
+.main-content { display: none; padding: 20px; }
 .logo { width: 160px; display: block; margin: 40px auto; }
 h2 { color: #ffd700; text-align: center; margin: 40px 0 20px; text-transform: uppercase; }
-p { color: #ccc; text-align: center; max-width: 500px; margin: 0 auto 40px; padding: 0 20px; }
+p { color: #ccc; text-align: center; max-width: 500px; margin: 0 auto 40px; }
 
-/* Swiper */
 .swiper { width: 100%; padding: 20px 0; }
 .swiper-slide { width: 280px; height: 380px; border-radius: 20px; border: 1px solid #ffd700; overflow: hidden; }
 .swiper-slide img, .swiper-slide video { width: 100%; height: 100%; object-fit: cover; }
-
-/* Contact */
-.whatsapp-btn { display: block; width: fit-content; margin: 40px auto; padding: 15px 30px; background: #25d366; color: #000; text-decoration: none; border-radius: 50px; font-weight: bold; }
