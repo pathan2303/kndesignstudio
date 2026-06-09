@@ -3,95 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KN DESIGN STUDIO</title>
-    
-    <!-- Swiper CSS -->
+    <title>KN STUDIO | Premium Interior Design</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Intro Screen (Video Intro) -->
+    <!-- Intro Video Screen -->
     <div id="intro-screen">
-        <video src="assets/intro.mp4" autoplay muted playsinline></video>
+        <video id="intro-video" src="assets/intro.mp4" playsinline autoplay muted></video>
     </div>
 
-    <!-- Header Section -->
+    <!-- Main Content -->
     <header>
         <img src="assets/logo.png" alt="KN Studio" class="logo">
-        <div class="tagline">Established 4.5 Years Ago</div>
     </header>
 
-    <!-- 3D Swiper Gallery -->
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            
-            <!-- Image Card (Clickable) -->
-            <div class="swiper-slide card" onclick="openModal('assets/project1.jpg')">
-                <img src="assets/project1.jpg" alt="Project">
+    <!-- SECTION 1: Image Slider -->
+    <section>
+        <h2 class="section-title">Interior Projects</h2>
+        <div class="swiper imgSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="assets/project1.jpg" onclick="openModal('assets/project1.jpg')"></div>
+                <div class="swiper-slide"><img src="assets/project2.jpg" onclick="openModal('assets/project2.jpg')"></div>
             </div>
-
-            <!-- Video Card -->
-            <div class="swiper-slide card">
-                <video src="assets/video1.mp4" muted loop autoplay playsinline></video>
-            </div>
-
-            <!-- Add more project cards below -->
-            <div class="swiper-slide card" onclick="openModal('assets/project2.jpg')">
-                <img src="assets/project2.jpg" alt="Project">
-            </div>
-
         </div>
-    </div>
+    </section>
 
-    <!-- Fullscreen Modal for Images -->
+    <!-- SECTION 2: Video Slider -->
+    <section>
+        <h2 class="section-title">Video Walkthroughs</h2>
+        <div class="swiper vidSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><video src="assets/video1.mp4" muted loop playsinline></video></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: About Us -->
+    <section class="about-section">
+        <h3>Crafting Timeless Spaces</h3>
+        <p>At KN Studio, we don't just design interiors; we curate lifestyle experiences. With over 4 years of expertise in luxury residential and commercial aesthetics, we bridge the gap between imagination and reality, delivering spaces that define sophistication and functionality.</p>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/917021209789" class="whatsapp-btn">Chat on WhatsApp</a>
+
     <div id="imageModal" class="modal" onclick="closeModal()">
-        <img id="modalImg" src="" alt="Zoomed Image">
+        <img id="modalImg" src="">
     </div>
 
-    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        // 1. Intro Screen Logic
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('intro-screen').style.opacity = '0';
-                setTimeout(() => {
-                    document.getElementById('intro-screen').style.display = 'none';
-                }, 1000);
-            }, 5000); // Intro runs for 5 seconds
-        });
-
-        // 2. Swiper Initialization
-        var swiper = new Swiper(".mySwiper", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            loop: true,
-            coverflowEffect: {
-                rotate: 40,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: true,
-            },
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-        });
-
-        // 3. Modal Functions
-        function openModal(src) {
-            document.getElementById('modalImg').src = src;
-            document.getElementById('imageModal').style.display = 'flex';
-        }
-
-        function closeModal() {
-            document.getElementById('imageModal').style.display = 'none';
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
