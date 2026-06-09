@@ -1,48 +1,152 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="style.css">
-    <title>KN DESIGN STUDIO</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KN DESIGN STUDIO</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div id="intro-screen">
-        <video id="bg-video" autoplay muted playsinline loop>
-            <source src="assets/intro.mp4" type="video/mp4">
-        </video>
-        <button id="explore-btn" class="glass-btn">EXPLORE STUDIO</button>
+<!-- INTRO SCREEN -->
+
+<section id="intro-screen">
+
+    <video id="bg-video" autoplay muted loop playsinline>
+        <source src="assets/intro.mp4" type="video/mp4">
+    </video>
+
+    <div class="intro-overlay"></div>
+
+    <div class="intro-content">
+
+        <img src="assets/logo.png" class="intro-logo" alt="KN Design Studio">
+
+        <h1>KN DESIGN STUDIO</h1>
+
+        <p>
+            Luxury Interior Design • Premium Space Planning • Elegant Living
+        </p>
+
+        <button id="explore-btn">
+            EXPLORE STUDIO
+        </button>
+
     </div>
 
-    <div id="portfolio">
-        <img src="assets/logo.png" class="logo">
-        
-        <h2>About KN Design Studio</h2>
-        <p style="text-align:center; color:#ccc; max-width:500px; margin:0 auto 50px;">Established in Jan 2022, KN Design Studio has redefined luxury for 4.5 years. We blend precision, aesthetics, and functionality to curate timeless interior spaces.</p>
+</section>
+
+<!-- MAIN WEBSITE -->
+
+<div id="portfolio">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <img src="assets/logo.png" class="logo" alt="Logo">
+
+        <h1 class="hero-title">
+            KN DESIGN STUDIO
+        </h1>
+
+        <p class="hero-text">
+            Established in January 2022, KN Design Studio creates luxurious,
+            timeless and elegant interior spaces that combine beauty,
+            comfort and functionality.
+        </p>
+
+    </section>
+
+    <!-- IMAGE GALLERY -->
+
+    <section>
 
         <h2>Interior Gallery</h2>
-        <div class="swiper imgSwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide" onclick="openModal('assets/project1.jpg')"><img src="assets/project1.jpg"></div>
+
+        <div class="swiper imageSwiper">
+
+            <div id="image-wrapper" class="swiper-wrapper">
+
             </div>
+
         </div>
+
+    </section>
+
+    <!-- VIDEO GALLERY -->
+
+    <section>
 
         <h2>Video Walkthroughs</h2>
-        <div class="swiper vidSwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><video src="assets/video1.mp4" muted loop autoplay playsinline></video></div>
+
+        <div class="swiper videoSwiper">
+
+            <div id="video-wrapper" class="swiper-wrapper">
+
             </div>
+
         </div>
 
-        <a href="https://wa.me/918208591573" class="whatsapp-btn">CONTACT US ON WHATSAPP</a>
-    </div>
+    </section>
 
-    <div id="modal" class="modal" onclick="this.style.display='none'">
-        <img id="modalImg" src="">
-    </div>
+    <!-- CONTACT -->
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <section class="contact-section">
+
+        <a
+            href="https://wa.me/918208591573"
+            target="_blank"
+            class="contact-btn"
+        >
+            CONTACT ON WHATSAPP
+        </a>
+
+    </section>
+
+</div>
+
+<!-- IMAGE MODAL -->
+
+<div id="imageModal" class="modal">
+
+    <span class="close-modal">&times;</span>
+
+    <img id="modalImage">
+
+</div>
+
+<!-- VIDEO MODAL -->
+
+<div id="videoModal" class="modal">
+
+    <span class="close-video">&times;</span>
+
+    <video
+        id="modalVideo"
+        controls
+        autoplay
+    ></video>
+
+</div>
+
+<!-- FLOATING WHATSAPP -->
+
+<a
+    href="https://wa.me/918208591573"
+    target="_blank"
+    class="floating-whatsapp"
+>
+    WhatsApp
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script src="script.js"></script>
+
 </body>
 </html>
-
