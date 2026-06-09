@@ -1,7 +1,6 @@
 const btn = document.getElementById("explore-btn");
-const video = document.getElementById("bg-video");
 
-// 3 sec logic
+// 3 sec delay for button fade in
 setTimeout(() => { btn.style.opacity = "1"; }, 3000);
 
 btn.addEventListener("click", () => {
