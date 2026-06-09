@@ -1,39 +1,369 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
-
-/* Intro Screen */
-#intro-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; display: flex; justify-content: center; align-items: center; }
-#bg-video { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
-
-.glass-btn {
-    padding: 20px 50px; font-size: 1.2rem; cursor: pointer;
-    background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 215, 0, 0.5); color: #ffd700;
-    border-radius: 50px; opacity: 0; transition: opacity 1s ease;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* Portfolio Page */
-#portfolio { display: none; padding: 40px 20px; }
-.logo { width: 180px; display: block; margin: 0 auto 40px; filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3)); }
-
-/* 3D Embossed Text */
-h2 { 
-    color: #ffd700; text-align: center; margin: 50px 0 30px; 
-    text-transform: uppercase; letter-spacing: 3px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5), -1px -1px 0px rgba(255,255,255,0.2); 
+html{
+    scroll-behavior:smooth;
 }
 
-/* Glassmorphism Cards with Gold Glow */
-.swiper-slide {
-    width: 280px; height: 380px; border-radius: 25px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 215, 0, 0.3);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 20px rgba(255, 215, 0, 0.2);
-    overflow: hidden;
+body{
+    background:#050505;
+    color:#ffffff;
+    font-family:'Segoe UI',sans-serif;
+    overflow-x:hidden;
 }
-.swiper-slide img, .swiper-slide video { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
 
-/* Modal */
-.modal { display: none; position: fixed; z-index: 10000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); backdrop-filter: blur(10px); justify-content: center; align-items: center; }
-.modal img { max-width: 90%; border-radius: 20px; }
+/* ==========================
+   INTRO SCREEN
+========================== */
+
+#intro-screen{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+#bg-video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.intro-overlay{
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.75)
+    );
+}
+
+.intro-content{
+    position:relative;
+    z-index:10;
+    text-align:center;
+    padding:20px;
+}
+
+.intro-logo{
+    width:180px;
+    max-width:60vw;
+
+    filter:
+    drop-shadow(0 0 10px #ffd700)
+    drop-shadow(0 0 30px #ffd700)
+    drop-shadow(0 0 60px #ffcc00);
+
+    animation:logoGlow 3s infinite ease-in-out;
+}
+
+@keyframes logoGlow{
+
+    0%,100%{
+        filter:
+        drop-shadow(0 0 10px #ffd700)
+        drop-shadow(0 0 30px #ffd700);
+    }
+
+    50%{
+        filter:
+        drop-shadow(0 0 20px #ffd700)
+        drop-shadow(0 0 80px #ffd700);
+    }
+}
+
+.intro-content h1{
+    margin-top:25px;
+    color:#ffd700;
+    letter-spacing:4px;
+    font-size:clamp(2rem,6vw,4rem);
+}
+
+.intro-content p{
+    margin-top:15px;
+    color:#d9d9d9;
+    font-size:1rem;
+}
+
+#explore-btn{
+    margin-top:35px;
+
+    border:none;
+    cursor:pointer;
+
+    padding:18px 40px;
+
+    border-radius:60px;
+
+    color:#ffd700;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,215,0,.4);
+
+    box-shadow:
+    0 0 30px rgba(255,215,0,.2);
+
+    transition:.35s;
+}
+
+#explore-btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 40px rgba(255,215,0,.5);
+}
+
+/* ==========================
+   MAIN
+========================== */
+
+#portfolio{
+    display:none;
+    padding:30px 20px 80px;
+}
+
+.hero{
+    max-width:1100px;
+    margin:auto;
+    text-align:center;
+}
+
+.logo{
+    width:220px;
+    max-width:70vw;
+
+    display:block;
+    margin:20px auto;
+
+    filter:
+    drop-shadow(0 0 20px #ffd700)
+    drop-shadow(0 0 40px #ffd700);
+}
+
+.hero-title{
+    color:#ffd700;
+    font-size:clamp(2rem,5vw,4rem);
+    letter-spacing:5px;
+}
+
+.hero-text{
+    max-width:850px;
+    margin:25px auto 40px;
+    line-height:1.9;
+    color:#cfcfcf;
+}
+
+/* ==========================
+   HEADINGS
+========================== */
+
+h2{
+    text-align:center;
+    margin:70px 0 35px;
+
+    color:#ffd700;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+}
+
+/* ==========================
+   SWIPER
+========================== */
+
+.swiper{
+    width:100%;
+    padding:40px 0 60px;
+}
+
+.swiper-slide{
+
+    width:min(85vw,350px);
+    height:min(70vw,500px);
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(25px);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+    0 8px 40px rgba(0,0,0,.45),
+    0 0 35px rgba(255,215,0,.15);
+
+    transition:.4s;
+}
+
+.swiper-slide:hover{
+    transform:translateY(-8px);
+}
+
+.swiper-slide img,
+.swiper-slide video{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    cursor:pointer;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.contact-section{
+    text-align:center;
+    margin-top:60px;
+}
+
+.contact-btn{
+    display:inline-block;
+
+    text-decoration:none;
+
+    color:#ffd700;
+
+    padding:18px 35px;
+
+    border-radius:50px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid rgba(255,215,0,.4);
+
+    backdrop-filter:blur(25px);
+
+    transition:.35s;
+}
+
+.contact-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* ==========================
+   MODALS
+========================== */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:999999;
+
+    background:
+    rgba(0,0,0,.96);
+
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+}
+
+.modal img{
+
+    max-width:95%;
+    max-height:95%;
+
+    border-radius:20px;
+}
+
+.modal video{
+
+    max-width:95%;
+    max-height:95%;
+
+    border-radius:20px;
+}
+
+.close-modal,
+.close-video{
+
+    position:absolute;
+
+    top:20px;
+    right:25px;
+
+    font-size:42px;
+
+    color:#ffffff;
+
+    cursor:pointer;
+}
+
+/* ==========================
+   FLOATING WHATSAPP
+========================== */
+
+.floating-whatsapp{
+
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    z-index:9999;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    background:#25D366;
+
+    padding:14px 20px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    box-shadow:
+    0 0 25px rgba(37,211,102,.45);
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+    .swiper-slide{
+        width:82vw;
+        height:120vw;
+        max-height:520px;
+    }
+
+    .hero-text{
+        font-size:.95rem;
+        padding:0 10px;
+    }
+
+    .floating-whatsapp{
+        bottom:15px;
+        right:15px;
+    }
+}
