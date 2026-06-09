@@ -3,54 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KN STUDIO | Premium Interior Design</title>
+    <title>KN DESIGN STUDIO</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Intro Video Screen -->
+    <!-- Intro Screen -->
     <div id="intro-screen">
-        <video id="intro-video" src="assets/intro.mp4" playsinline autoplay muted></video>
+        <video id="intro-video" src="assets/intro.mp4" autoplay muted playsinline></video>
+        <button id="exploreBtn" class="explore-btn" onclick="showContent()">EXPLORE STUDIO</button>
     </div>
 
     <!-- Main Content -->
-    <header>
-        <img src="assets/logo.png" alt="KN Studio" class="logo">
-    </header>
+    <div id="mainContent" class="main-content">
+        <header>
+            <img src="assets/logo.png" class="logo" alt="KN Studio Logo">
+        </header>
 
-    <!-- SECTION 1: Image Slider -->
-    <section>
-        <h2 class="section-title">Interior Projects</h2>
+        <section class="about">
+            <h2>About KN Design Studio</h2>
+            <p>Established in Jan 2022, KN Design Studio has been redefining luxury for 4.5 years. We blend precision, aesthetics, and functionality to curate timeless interior spaces that reflect your unique lifestyle.</p>
+        </section>
+
+        <h2>Interior Gallery</h2>
         <div class="swiper imgSwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="assets/project1.jpg" onclick="openModal('assets/project1.jpg')"></div>
-                <div class="swiper-slide"><img src="assets/project2.jpg" onclick="openModal('assets/project2.jpg')"></div>
+                <div class="swiper-slide"><img src="assets/project1.jpg" alt="Interior"></div>
+                <div class="swiper-slide"><img src="assets/project2.jpg" alt="Interior"></div>
             </div>
         </div>
-    </section>
 
-    <!-- SECTION 2: Video Slider -->
-    <section>
-        <h2 class="section-title">Video Walkthroughs</h2>
+        <h2>Video Walkthroughs</h2>
         <div class="swiper vidSwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><video src="assets/video1.mp4" muted loop playsinline></video></div>
+                <div class="swiper-slide"><video src="assets/video1.mp4" muted loop autoplay playsinline></video></div>
             </div>
         </div>
-    </section>
 
-    <!-- SECTION 3: About Us -->
-    <section class="about-section">
-        <h3>Crafting Timeless Spaces</h3>
-        <p>At KN Studio, we don't just design interiors; we curate lifestyle experiences. With over 4 years of expertise in luxury residential and commercial aesthetics, we bridge the gap between imagination and reality, delivering spaces that define sophistication and functionality.</p>
-    </section>
-
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/917021209789" class="whatsapp-btn">Chat on WhatsApp</a>
-
-    <div id="imageModal" class="modal" onclick="closeModal()">
-        <img id="modalImg" src="">
+        <a href="https://wa.me/918208591573" class="whatsapp-btn">CONTACT US ON WHATSAPP</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
