@@ -11,22 +11,28 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("overlay").style.display = "none";
         document.getElementById("portfolio").style.display = "block";
     });
-});
-// Intro screen fade out after 6 seconds
-setTimeout(() => {
-    document.getElementById('intro-screen').style.display = 'none';
-}, 6000);
+});// 1. Intro Video Control
+const video = document.getElementById('intro-video');
+const introScreen = document.getElementById('intro-screen');
 
-// Swiper Initialization
-var swiper = new Swiper(".mySwiper", {
-    effect: "cards",
-    grabCursor: true,
-    autoplay: { delay: 2500, disableOnInteraction: false },
+video.onended = () => {
+    introScreen.style.opacity = '0';
+    setTimeout(() => introScreen.style.display = 'none', 1000);
+};
+
+// 2. Sliders
+const imgSwiper = new Swiper(".imgSwiper", {
+    effect: "coverflow", grabCursor: true, centeredSlides: true,
+    slidesPerView: "auto", loop: true,
+    coverflowEffect: { rotate: 50, stretch: 0, depth: 100, modifier: 1, slideShadows: true },
+    autoplay: { delay: 2500 }
+});
+
+const vidSwiper = new Swiper(".vidSwiper", {
+    slidesPerView: 1.2, spaceBetween: 20, centeredSlides: true, loop: true,
+    autoplay: { delay: 4000 }
 });
 
 // Modal Logic
-function openModal(src) {
-    document.getElementById('modal').style.display = 'block';
-    document.getElementById('modal-content').src = src;
-}
-
+function openModal(src) { document.getElementById('modalImg').src = src; document.getElementById('imageModal').style.display = 'flex'; }
+function closeModal() { document.getElementById('imageModal').style.display = 'none'; }
