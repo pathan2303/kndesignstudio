@@ -1,14 +1,12 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body, html { width: 100%; height: 100%; background: #000; color: #fff; font-family: sans-serif; overflow-x: hidden; }
 
-/* INTRO VIDEO FULLSCREEN */
-#intro-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; }
-#bg-video { width: 100%; height: 100%; object-fit: cover; }
-
-#overlay { 
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+/* INTRO SCREEN - No Overlay, Just Video + Button */
+#intro-screen { 
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; 
     display: flex; justify-content: center; align-items: center; 
 }
+#bg-video { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
 
 .glass-btn {
     padding: 20px 50px; font-size: 1.2rem; cursor: pointer;
