@@ -79,6 +79,17 @@ videoUrls.forEach((url) => {
     videoWrapper.appendChild(slide);
 
 });
+document.querySelectorAll('.video-card video').forEach(video => {
+
+    video.addEventListener('loadedmetadata', () => {
+
+        try {
+            video.currentTime = 1;
+        } catch(e) {}
+
+    });
+
+});
 /* ==========================
    IMAGE MODAL
 ========================== */
