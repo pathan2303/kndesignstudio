@@ -424,15 +424,14 @@ overflow:hidden;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    font-size:60px;
+    font-size:52px;
     color:white;
-    text-shadow:0 0 20px rgba(0,0,0,.8);
+    text-shadow:0 0 20px rgba(0,0,0,.7);
     pointer-events:none;
-    transition:.3s;
 }
 
-.video-card:hover::after{
-    transform:translate(-50%,-50%) scale(1.2);
+.video-card video{
+    filter:brightness(.8);
 }
 
 .profile-btn{
