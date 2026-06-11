@@ -44,9 +44,22 @@ for (let i = 1; i <= 25; i++) {
    VIDEO GALLERY
 ========================== */
 
+const videoUrls = [
+"https://res.cloudinary.com/dbm3hzq94/video/upload/v1781155584/video1_eocrwq.mp4",
+"https://res.cloudinary.com/dbm3hzq94/video/upload/v1781155582/video2_bvksbe.mp4",
+"https://res.cloudinary.com/dbm3hzq94/video/upload/v1781155590/video3_a9eii8.mp4",
+"https://res.cloudinary.com/dbm3hzq94/video/upload/v1781155581/Video4_a7rlta.mp4",
+"https://res.cloudinary.com/dbm3hzq94/video/upload/v1781155567/video5_hjbhna.mp4",
+"https://res.cloudinary.com/dbm3hzq94/video/upload/v1781155558/video6_fqbavm.mp4",
+"https://res.cloudinary.com/dbm3hzq94/video/upload/v1781155564/video7_xn4sw5.mp4",
+"https://res.cloudinary.com/dbm3hzq94/video/upload/v1781155565/video8_eatwcm.mp4",
+"https://res.cloudinary.com/dbm3hzq94/video/upload/v1781155567/video9_k6xr0g.mp4",
+"https://res.cloudinary.com/dbm3hzq94/video/upload/v1781155569/video10_atbg0l.mp4"
+];
+
 const videoWrapper = document.getElementById("video-wrapper");
 
-for (let i = 1; i <= 11; i++) {
+videoUrls.forEach((url) => {
 
     const slide = document.createElement("div");
 
@@ -58,15 +71,16 @@ for (let i = 1; i <= 11; i++) {
             loop
             playsinline
             autoplay
-            onclick="openVideo('assets/video${i}.mp4')"
+            preload="metadata"
+            onclick="openVideo('${url}')"
         >
-            <source src="assets/video${i}.mp4" type="video/mp4">
+            <source src="${url}" type="video/mp4">
         </video>
     `;
 
     videoWrapper.appendChild(slide);
-}
 
+});
 /* ==========================
    IMAGE MODAL
 ========================== */
