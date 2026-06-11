@@ -68,9 +68,7 @@ videoUrls.forEach((url) => {
     slide.innerHTML = `
         <video
             muted
-            loop
             playsinline
-            autoplay
             preload="metadata"
             onclick="openVideo('${url}')"
         >
@@ -162,7 +160,7 @@ new Swiper(".imageSwiper", {
     loop: true,
 
     autoplay: {
-        delay: 2500,
+        delay: 1800,
         disableOnInteraction: false
     },
 
@@ -194,8 +192,10 @@ new Swiper(".videoSwiper", {
 
     loop: true,
 
+    speed: 1200,
+
     autoplay: {
-        delay: 3500,
+        delay: 1800,
         disableOnInteraction: false
     },
 
@@ -205,12 +205,12 @@ new Swiper(".videoSwiper", {
 
         stretch: 0,
 
-        depth: 250,
+        depth: 180,
 
-        modifier: 2,
+        modifier: 1.5,
 
-        scale: 0.9,
+        scale: 0.92,
 
-        slideShadows: true
+        slideShadows: false
     }
 });
