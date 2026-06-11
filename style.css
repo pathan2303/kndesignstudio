@@ -434,3 +434,32 @@ overflow:hidden;
 .video-card:hover::after{
     transform:translate(-50%,-50%) scale(1.2);
 }
+
+.profile-btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    color:#D6C7A1;
+
+    padding:18px 35px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(214,199,161,.25);
+
+    backdrop-filter:blur(25px);
+
+    transition:.35s;
+}
+
+.profile-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 25px rgba(214,199,161,.18);
+}
