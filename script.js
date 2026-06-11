@@ -63,7 +63,7 @@ videoUrls.forEach((url) => {
 
     const slide = document.createElement("div");
 
-    slide.className = "swiper-slide";
+    slide.className = "swiper-slide video-card";
 
     slide.innerHTML = `
         <video
